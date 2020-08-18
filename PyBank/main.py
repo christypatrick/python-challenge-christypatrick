@@ -18,16 +18,25 @@ with open(csv_path, 'r') as csv_file:
 
     # Read the header row first (skip this step if there is no header)
     csv_header = next(csv_reader)
-    print(f"CSV Header: {csv_header}")
+    # print(f"CSV Header: {csv_header}")
 
     # Read each row of data after the header
     for row in csv_reader:
-        print(row)
+        # print(row)
 
 
-# months in data
+# Analysis Header
+        print("")
+        print("Financial Analysis")
+        print("-----------------------------------------")
+
+# months in data - count months in the list and capture the corresponding candy at each value of i
+    #for i in range(len(date)):
+        num_months = len(list(csv_reader))
+        print(f"Total Months: {num_months}")
 
 # net total amount of profit/losses
+
 
 # average of changes in profits/losses
 
