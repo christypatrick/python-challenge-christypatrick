@@ -49,11 +49,10 @@ with open(csv_path, 'r') as csv_file:
         #months in data - count months in the list 
         num_months = num_months + 1    
       
-    # net total amount of profit/losses
+        # net total amount of profit/losses
         total_profit = total_profit + int(row[1])
         
-# average of changes in profits/losses
-
+    # average of changes in profits/losses
         #current month - previous month
         monthly_change = int(row[1]) - previous_revenue
 
@@ -64,8 +63,7 @@ with open(csv_path, 'r') as csv_file:
         profit_changes.append(monthly_change)
         print(profit_changes)
 
-    # calculate the sum(profit_changes)/number of profit_changes
-
+        # calculate the sum(profit_changes)/number of profit_changes
         average_change = int(sum(profit_changes)/len(profit_changes))
         print(f"{average_change}")
 
