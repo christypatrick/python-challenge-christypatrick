@@ -13,7 +13,7 @@ num_months = 0
 # Used to calculate the total profit or loss
 total_profit = 0
 # Used when calculating the monthly change in profit or loss
-previous_revenue = 0
+previous_revenue = 867884
 monthly_change = 0
 # Calculates average change
 average_change = 0
@@ -55,17 +55,14 @@ with open(csv_path, 'r') as csv_file:
     # average of changes in profits/losses
         #current month - previous month
         monthly_change = int(row[1]) - previous_revenue
+        #print(monthly_change)
 
         #reset the previous month's revenue to the row just above
         previous_revenue = int(row[1])
 
         #store monthly changes in a list to be summed up to 196785
         profit_changes.append(monthly_change)
-        print(profit_changes)
-
-        # calculate the sum(profit_changes)/number of profit_changes
-        average_change = int(sum(profit_changes)/len(profit_changes))
-        print(f"{average_change}")
+        #print(profit_changes)
 
         # month with the greatest increase (include amount)
         if (monthly_change > greatest_increase):
@@ -76,6 +73,9 @@ with open(csv_path, 'r') as csv_file:
         if (monthly_change < greatest_decrease):
             greatest_decrease = monthly_change
             greatest_dec_month = (row[0])
+
+    # calculate the sum(profit_changes)/number of profit_changes
+    average_change = sum(profit_changes)/(len(profit_changes)-1)  
 
     # Analysis Header
     print("")
