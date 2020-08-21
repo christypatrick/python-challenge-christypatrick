@@ -10,7 +10,10 @@ csv_path = os.path.join('Resources', 'election_data.csv')
 ### Variables
 num_votes = 0
 candidate_votes = 0
-
+khan_percent = 0
+correy_percent = 0
+li_perecent = 0
+otooley_percent= 0
 
 candidate_list = []
 khan_votes = []
@@ -59,9 +62,16 @@ with open(csv_path, 'r') as csv_file:
         else:
             pass 
 
+    # Percentage of votes each candidate won
+    
+    khan_percent = "{:.3%}".format(len(khan_votes)/(num_votes))
+    #print("{:.3%}".format(khan_percent))
+    print(khan_percent)
+    #correy_percent = 0
+    #li_perecent = 0
+    #otooley_percent= 0
 
 
-    #unique List by candidate, if the name is the same then add it to the vote list. length of the list is the count - outside of the loop.
  
     # Percentage of votes each candidate won
         #
@@ -76,7 +86,7 @@ with open(csv_path, 'r') as csv_file:
     print("-"*30)
     print(f"Total Votes: {num_votes}")    
     print("-"*30)
-    print (f"Khan: {len(khan_votes)}")
+    print (f"Khan: {khan_percent} ({len(khan_votes)})")
     print (f"Correy: {len(correy_votes)}")
     print (f"Li: {len(li_votes)}")
     print (f"O'Tooley: {len(otooley_votes)}")
