@@ -65,16 +65,9 @@ with open(csv_path, 'r') as csv_file:
     # Percentage of votes each candidate won
     
     khan_percent = "{:.3%}".format(len(khan_votes)/(num_votes))
-    #print("{:.3%}".format(khan_percent))
-    print(khan_percent)
-    #correy_percent = 0
+    correy_percent = "{:.3%}".format(len(correy_votes)/(num_votes))
     #li_perecent = 0
     #otooley_percent= 0
-
-
- 
-    # Percentage of votes each candidate won
-        #
 
 
 
@@ -87,7 +80,7 @@ with open(csv_path, 'r') as csv_file:
     print(f"Total Votes: {num_votes}")    
     print("-"*30)
     print (f"Khan: {khan_percent} ({len(khan_votes)})")
-    print (f"Correy: {len(correy_votes)}")
+    print (f"Correy: {correy_percent} ({len(correy_votes)})")
     print (f"Li: {len(li_votes)}")
     print (f"O'Tooley: {len(otooley_votes)}")
     # #print candidate: % votes (num votes)
