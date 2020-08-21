@@ -75,7 +75,7 @@ with open(csv_path, 'r') as csv_file:
             greatest_dec_month = (row[0])
 
     # calculate the sum(profit_changes)/number of profit_changes
-    average_change = sum(profit_changes)/(len(profit_changes)-1)  
+    average_change = str(round(sum(profit_changes)/(len(profit_changes)-1)  ,2))
 
     # Analysis Header
     print("")
@@ -85,6 +85,6 @@ with open(csv_path, 'r') as csv_file:
     #print analysis
     print(f"Total Months: {num_months}")  
     print(f"Total: $ {total_profit}")
-    print(f"Average Change: $ {average_change}")
-    print(f"Greatest Increase in Profits: {greatest_inc_month}($ {greatest_increase})")
-    print(f"Greatest Decrease in Profits: {greatest_dec_month}($ {greatest_decrease})")
+    print(f"Average Change: ${average_change}")
+    print(f"Greatest Increase in Profits: {greatest_inc_month} (${greatest_increase})")
+    print(f"Greatest Decrease in Profits: {greatest_dec_month} (${greatest_decrease})")
