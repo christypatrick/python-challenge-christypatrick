@@ -4,6 +4,9 @@ import os
 # import CSV module
 import csv
 
+#import statistics module
+import statistics
+
 # set file path
 csv_path = os.path.join('Resources', 'election_data.csv')
 
@@ -14,12 +17,15 @@ khan_percent = 0
 correy_percent = 0
 li_percent = 0
 otooley_percent= 0
+winner = 0
 
+votes_list = []
 candidate_list = []
 khan_votes = []
 correy_votes = []
 li_votes = []
 otooley_votes = []
+percent_list = []
 
 # Read using CSV module
 
@@ -41,7 +47,10 @@ with open(csv_path, 'r') as csv_file:
     for row in csv_reader:
     
     # Calculate total number of votes cast (expect 3521001)
-        num_votes = num_votes + 1  
+        num_votes = num_votes + 1
+
+    # Create votes list
+        votes_list.append(row[2])
 
     # Compile a list of candidates that received votes
         if (row[2]) not in candidate_list:
@@ -69,9 +78,10 @@ with open(csv_path, 'r') as csv_file:
     li_percent = "{:.3%}".format(len(li_votes)/(num_votes))
     otooley_percent= "{:.3%}".format(len(otooley_votes)/(num_votes))
 
-
-
     # winner of the election
+
+    winner = (statistics.mode(votes_list))
+ 
 
     #Analysis Header
     print("")
@@ -83,10 +93,7 @@ with open(csv_path, 'r') as csv_file:
     print (f"Correy: {correy_percent} ({len(correy_votes)})")
     print (f"Li: {li_percent} ({len(li_votes)})")
     print (f"O'Tooley: {otooley_percent} ({len(otooley_votes)})")
-    # #print candidate: % votes (num votes)
-    # print("-"*30)
-    # #print(f"Winner: {}")
-    # print("-"*30)    
+    print("-"*30)
+    print(f"Winner: {winner}")
+    print("-"*30)    
 
-
-    #print analysis
