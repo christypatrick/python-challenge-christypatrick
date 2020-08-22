@@ -82,22 +82,6 @@ with open(csv_path, 'r') as csv_file:
 
     winner = (statistics.mode(votes_list))
  
-
-    # #Analysis Header
-    # print("")
-    # print("Election Results")
-    # print("-"*30)
-    # print(f"Total Votes: {num_votes}")    
-    # print("-"*30)
-    # print (f"Khan: {khan_percent} ({len(khan_votes)})")
-    # print (f"Correy: {correy_percent} ({len(correy_votes)})")
-    # print (f"Li: {li_percent} ({len(li_votes)})")
-    # print (f"O'Tooley: {otooley_percent} ({len(otooley_votes)})")
-    # print("-"*30)
-    # print(f"Winner: {winner}")
-    # print("-"*30)    
-
-
     #Analysis 
     message = f"""
         Election Results

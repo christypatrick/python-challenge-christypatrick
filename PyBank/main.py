@@ -89,3 +89,6 @@ with open(csv_path, 'r') as csv_file:
         Greatest Decrease in Profits: {greatest_dec_month} (${greatest_decrease})
     """
     print(message)
+
+    with open('analysis_results_pybank.txt', 'x') as f:
+        f.write(message)
