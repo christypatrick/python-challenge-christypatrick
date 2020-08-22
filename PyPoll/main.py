@@ -98,3 +98,6 @@ with open(csv_path, 'r') as csv_file:
     """
 
     print(message)
+
+    with open('analysis_results_pypoll.txt', 'x') as f:
+        f.write(message)
