@@ -37,7 +37,7 @@ with open(csv_path, 'r') as csv_file:
     #print(csv_reader)
 
     # Read the header row first (skip this step if there is no header)
-    #csv_header = next(csv_reader)
+    csv_header = next(csv_reader)
     #print(f"CSV Header: {csv_header}")
 
     # Read each row of data after the header
@@ -83,17 +83,34 @@ with open(csv_path, 'r') as csv_file:
     winner = (statistics.mode(votes_list))
  
 
-    #Analysis Header
-    print("")
-    print("Election Results")
-    print("-"*30)
-    print(f"Total Votes: {num_votes}")    
-    print("-"*30)
-    print (f"Khan: {khan_percent} ({len(khan_votes)})")
-    print (f"Correy: {correy_percent} ({len(correy_votes)})")
-    print (f"Li: {li_percent} ({len(li_votes)})")
-    print (f"O'Tooley: {otooley_percent} ({len(otooley_votes)})")
-    print("-"*30)
-    print(f"Winner: {winner}")
-    print("-"*30)    
+    # #Analysis Header
+    # print("")
+    # print("Election Results")
+    # print("-"*30)
+    # print(f"Total Votes: {num_votes}")    
+    # print("-"*30)
+    # print (f"Khan: {khan_percent} ({len(khan_votes)})")
+    # print (f"Correy: {correy_percent} ({len(correy_votes)})")
+    # print (f"Li: {li_percent} ({len(li_votes)})")
+    # print (f"O'Tooley: {otooley_percent} ({len(otooley_votes)})")
+    # print("-"*30)
+    # print(f"Winner: {winner}")
+    # print("-"*30)    
 
+
+    #Analysis 
+    message = f"""
+        Election Results
+        {"-"*30}
+        Total Votes: {num_votes}
+        {"-"*30}
+        Khan: {khan_percent} ({len(khan_votes)})
+        Correy: {correy_percent} ({len(correy_votes)})
+        Li: {li_percent} ({len(li_votes)})
+        O'Tooley: {otooley_percent} ({len(otooley_votes)})
+        {"-"*30}
+        Winner: {winner}
+        {"-"*30}
+    """
+
+    print(message)
