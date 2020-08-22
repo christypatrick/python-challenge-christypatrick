@@ -34,16 +34,9 @@ with open(csv_path, 'r') as csv_file:
     # CSV reader specifies delimiter and variable that holds contents
     csv_reader = csv.reader(csv_file, delimiter=',')
 
-    #print(csv_reader)
-
     # Read the header row first (skip this step if there is no header)
     csv_header = next(csv_reader)
-    #print(f"CSV Header: {csv_header}")
-
-    # Read each row of data after the header
-    #for row in csv_reader:
-        #print(row) 
-
+   
     for row in csv_reader:
     
     # Calculate total number of votes cast (expect 3521001)
@@ -58,7 +51,7 @@ with open(csv_path, 'r') as csv_file:
         else:
             pass        
 
-    #print(candidate_list)
+
      #total number of votes each candidate won
         if (row[2]) == "Khan":
             khan_votes.append(row[2])

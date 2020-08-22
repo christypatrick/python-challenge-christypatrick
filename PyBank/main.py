@@ -34,15 +34,9 @@ with open(csv_path, 'r') as csv_file:
     # CSV reader specifies delimiter and variable that holds contents
     csv_reader = csv.reader(csv_file, delimiter=',')
 
-    #print(csv_reader)
-
     # Read the header row first (skip this step if there is no header)
     csv_header = next(csv_reader)
-    #print(f"CSV Header: {csv_header}")
-
-    # Read each row of data after the header
-    #for row in csv_reader:
-        #print(row) 
+    
 
     for row in csv_reader:
 
@@ -55,15 +49,13 @@ with open(csv_path, 'r') as csv_file:
     # average of changes in profits/losses
         #current month - previous month
         monthly_change = int(row[1]) - previous_revenue
-        #print(monthly_change)
-
+        
         #reset the previous month's revenue to the row just above
         previous_revenue = int(row[1])
 
         #store monthly changes in a list to be summed up to 196785
         profit_changes.append(monthly_change)
-        #print(profit_changes)
-
+        
         # month with the greatest increase (include amount)
         if (monthly_change > greatest_increase):
             greatest_increase = monthly_change
@@ -77,7 +69,7 @@ with open(csv_path, 'r') as csv_file:
     # calculate the sum(profit_changes)/number of profit_changes
     average_change = str(round(sum(profit_changes)/(len(profit_changes)-1)  ,2))
 
-    # # Analysis
+    # Analysis
 
     message = f"""
         Financial Analysis
