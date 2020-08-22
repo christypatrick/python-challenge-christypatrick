@@ -1,8 +1,8 @@
 # python-challenge-christypatrick
 
 ## PyBank and PyPoll Summary
-* PyBank:  Analyze financial profit and loss data over a given timeframe
-* PyPoll:  Analyze election data and determine the winner of the election
+* PyBank:  Analysis of financial profit and loss data over a given timeframe
+* PyPoll:  Analysis of election data and determine the winner of the election
 ______________________________________________________________________________
 ###### PyBank
 * Analyzed 86 months of financial data in the budget_data.csv using Python
