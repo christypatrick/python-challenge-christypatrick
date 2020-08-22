@@ -77,14 +77,15 @@ with open(csv_path, 'r') as csv_file:
     # calculate the sum(profit_changes)/number of profit_changes
     average_change = str(round(sum(profit_changes)/(len(profit_changes)-1)  ,2))
 
-    # Analysis Header
-    print("")
-    print("Financial Analysis")
-    print("-"*30)   
+    # # Analysis
 
-    #print analysis
-    print(f"Total Months: {num_months}")  
-    print(f"Total: $ {total_profit}")
-    print(f"Average Change: ${average_change}")
-    print(f"Greatest Increase in Profits: {greatest_inc_month} (${greatest_increase})")
-    print(f"Greatest Decrease in Profits: {greatest_dec_month} (${greatest_decrease})")
+    message = f"""
+        Financial Analysis
+        {"-"*30}
+        Total Months: {num_months} 
+        Total: $ {total_profit} 
+        Average Change: ${average_change} 
+        Greatest Increase in Profits: {greatest_inc_month} (${greatest_increase}) 
+        Greatest Decrease in Profits: {greatest_dec_month} (${greatest_decrease})
+    """
+    print(message)
